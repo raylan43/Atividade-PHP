@@ -1,0 +1,28 @@
+<?php
+    $pontuaçao = 0;
+    print ('Vamos ver se você é preguiçoso !' . "\n");
+    print ('Responda entre 0 = nunca a 10 = sempre.' . "\n");
+    $pontuacao = quest('Você acorda antes das 8hrs ?' . "\n");
+    $pontuacao +=  quest('Você faz esportes frequentemente ?' . "\n");
+    $pontuacao += quest('Você faz as tarefas do colégio?' . "\n");
+    $pontuacao +=  quest('Você ajuda nos deveres de casa ?' . "\n");
+    $pontuacao +=  quest('Voce dorme depois das 8hrs?' . "\n");
+
+    print ("Calculando... \n");
+
+    if ($pontuacao >= 40){
+        print ("Você não é preguiçoso, Parabéns !!! sua pontuação foi = $pontuacao/50");
+    }
+    elseif ($pontuacao >= 20){
+        print ("Você é mais ou menos ! sua pontuação foi = $pontuacao/50 Bahh..");
+    }
+    else{
+        print ("Você é bem preguiçoso, Shikamaru 2.0. Sua pontuação foi = $pontuacao/50");
+    }
+    function quest($pergunta){
+        $resposta = 11;
+        while(!($resposta >= 0 && $resposta <= 10)){
+            $resposta = (int)readline($pergunta);
+        }
+        return $resposta;
+    }
